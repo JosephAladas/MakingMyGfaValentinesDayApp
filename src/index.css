@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.window {
+    width: 650px;
+    height: 700px;
+    background: #F4A261;
+    border: 8px solid #ABB9FF; /* Adjusted to match blue border */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+    z-index: -1;
+}
+
+.title-bar {
+    width: 100%;
+    color: #000;
+    display: flex;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-bottom: 4px solid #000;
+    position: relative; /* Needed for absolute positioning of buttons */
+    z-index: 3;
+}
+
+/* Positions the close button in the top-right */
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;  /* Adjust button size */
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Positions the shrink button in the top-left */
+.minimize {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.window-controls {
+    display: flex;
+    gap: 6px; /* Reduced spacing */
+}
+
+.window-controls button {
+    background: #ffccaa;
+    border: 2px solid #000;
+    width: 20px; /* Reduced size */
+    height: 20px; /* Reduced size */
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.window-controls .close {
+    background: #D9534F;
+    color: #000;
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; /* Reduced spacing */
+    z-index: 1;
+    flex-grow: 1;
+    flex: 1;
+    padding-top: 10px; /* Adjusted padding */
+}
+
+.text {
+    font-size: 28px; /* Slightly adjusted */
+    color: #000;
+    text-shadow: 3px 3px #fff;
+}
+
+.graphics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Reduced gap */
+}
+
+.face, .heart {
+    width: 140px; /* Adjusted size */
+    image-rendering: pixelated;
+}
+
+.accept-btn img {
+    width: 100%; /* Adjust size to match the original button look */
+    height: auto;
+}
+.accept-btn{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
+.accept-btn:hover {
+    transform: scale(1.5); /* Slightly larger on hover */
+}
+
+.clouds {
+    position: absolute; /* Inside the window */
+    top: 0; /* Adjust height */
+    left: 0; /* Keeps it inside */
+    width: 100%; /* Shrinks clouds so they don’t fill everything */
+    height: 100%; /* Keeps them within the content */
+    background: url('../assets/Clouds.png') no-repeat center;
+    background-size: cover;
+    z-index: 0; /* Behind content, but inside window */
+    image-rendering: pixelated; /* Ensures pixel-art look */
+    animation: choppyFloat 1s steps(2) infinite alternate; /* Choppy movement */
+}
+
+/* Choppy floating effect */
+@keyframes choppyFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
