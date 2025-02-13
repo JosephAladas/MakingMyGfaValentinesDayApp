@@ -6,14 +6,6 @@
     box-sizing: border-box;
 }
 
-/* body {
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-} */
-
 .window {
     width: 650px;
     height: 700px;
@@ -56,28 +48,26 @@
 .heart {
     width: 180px; 
     animation: scaleAnimation 1.5s alternate infinite ease-in-out;
+    display: inline-block;
 }
 .face{
     width: 300px; 
-    animation: diagonalSwing 0.5s steps(2);
+    animation: diagonalSwing 0.5s steps(2) infinite alternate;
     display: inline-block; /* Prevents layout shifts */
 }
 
 .accept-btn{
-    width: 40%; /* Adjust size to match the original button look */
-    height: auto;
-    display: flex;
-    justify-content: center;
+    width: 100%; /* Adjust size to match the original button look */
+    position: relative;
     background-color: #ABB9FF;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
     color: #000;
     border: 2px solid #000;
     border-radius: 5px;
-    padding: 5px; 
+    padding: 10px; 
     z-index: 20;
-    position: relative; 
-    cursor: pointer; /* Make it clickable */
+    cursor: pointer; 
 }
 
 .clouds {
@@ -91,6 +81,13 @@
     z-index: 0; /* Behind content, but inside window */
     animation: choppyFloat 0.3s steps(2) infinite alternate; /* Choppy movement */
     pointer-events: none; /* Prevents it from blocking clicks */
+}
+
+.joseph{
+    animation: kissAnimation 3s infinite ease-in-out;
+}
+.boobie{
+    animation: kissAnimationReverse 3s infinite ease-in-out;
 }
 
 /* Choppy floating effect */
@@ -111,4 +108,28 @@
     50% { transform: rotate(0deg) translate(0, 0); }
     75% { transform: rotate(-5deg) translate(-5px, -5px); }
     100% { transform: rotate(0deg) translate(0, 0); }
+}
+
+@keyframes kissAnimation {
+    0% { transform: translateX(0); }  
+    30% { transform: translateX(30px); } /* Move towards each other */
+    
+    /* Rotate right, then left, then reset */
+    50% { transform: translateX(30px) rotate(10deg); }  
+    70% { transform: translateX(30px) rotate(-10deg); }  
+    90% { transform: translateX(30px) rotate(0deg); }  
+
+    100% { transform: translateX(0); } /* Back to start */
+}
+
+@keyframes kissAnimationReverse {
+    0% { transform: translateX(0); }  
+    30% { transform: translateX(-30px); } /* Move towards each other */
+
+    /* Rotate left, then right, then reset */
+    50% { transform: translateX(-30px) rotate(-10deg); }  
+    70% { transform: translateX(-30px) rotate(10deg); }  
+    90% { transform: translateX(-30px) rotate(0deg); }  
+
+    100% { transform: translateX(0); } /* Back to start */
 }

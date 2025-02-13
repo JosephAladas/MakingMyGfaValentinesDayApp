@@ -26,19 +26,20 @@
                 <img src="../assets/me.png" alt="Face" class="face">
                 <img src="../assets/heart1.png" alt="Heart" class="heart">
             </div>
-            <button class="accept-btn">Accept?</button>
+            <button class="accept-btn" id="changePage">Accept?</button>
         </div>
     </div>
 </body>
 <script>
     document.querySelector('.accept-btn').addEventListener('mouseover', function() {
-        this.style.transform = 'scale(1.3)';
+        this.style.transform = 'scale(1.1)';
     });
     document.querySelector('.accept-btn').addEventListener('mouseout', function() {
         this.style.transform = 'scale(1)';
     });
     document.querySelector('.accept-btn').addEventListener('click', function() {
-        alert('I love you!');
+        window.location.href = 'Accept.html';
     });
 </script>
+<script src="renderer.js"></script>
 </html>
