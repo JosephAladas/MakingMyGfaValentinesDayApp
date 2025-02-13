@@ -28,28 +28,26 @@ body {
     z-index: -1;
 }
 
-.title-bar {
+/* .title-bar {
     width: 100%;
     color: #000;
     display: flex;
     padding: 8px 10px;
     font-size: 14px;
     border-bottom: 4px solid #000;
-    position: relative; /* Needed for absolute positioning of buttons */
+    position: relative; 
     z-index: 3;
 }
 
-/* Positions the close button in the top-right */
 .close {
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 25px;  /* Adjust button size */
+    width: 25px; 
     height: 25px;
     cursor: pointer;
 }
 
-/* Positions the shrink button in the top-left */
 .minimize {
     position: absolute;
     top: 5px;
@@ -57,60 +55,62 @@ body {
     width: 25px;
     height: 25px;
     cursor: pointer;
-}
-
+} */
+/* 
 .window-controls {
     display: flex;
-    gap: 6px; /* Reduced spacing */
-}
-
+    gap: 6px; 
+} */
+/* 
 .window-controls button {
     background: #ffccaa;
     border: 2px solid #000;
-    width: 20px; /* Reduced size */
-    height: 20px; /* Reduced size */
+    width: 20px; 
+    height: 20px; 
     font-size: 14px;
     text-align: center;
     cursor: pointer;
-}
+} */
 
-.window-controls .close {
+/* .window-controls .close {
     background: #D9534F;
     color: #000;
-}
+} */
 
 .content {
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px; /* Reduced spacing */
+    gap: 20px; 
     z-index: 1;
     flex-grow: 1;
     flex: 1;
-    padding-top: 10px; /* Adjusted padding */
+    padding-top: 10px; 
 }
 
 .text {
-    font-size: 28px; /* Slightly adjusted */
+    font-size: 45px; /* Slightly adjusted */
     color: #000;
-    text-shadow: 3px 3px #fff;
+    text-shadow: 3px 3px #ffffff;
 }
 
 .graphics {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px; /* Reduced gap */
+    gap: 15px; 
 }
 
-.face, .heart {
-    width: 140px; /* Adjusted size */
-    image-rendering: pixelated;
+.heart {
+    width: 180px; 
+}
+.face{
+    width: 300px; 
 }
 
 .accept-btn img {
-    width: 100%; /* Adjust size to match the original button look */
+    width: 50%; /* Adjust size to match the original button look */
     height: auto;
 }
 .accept-btn{
@@ -133,7 +133,6 @@ body {
     background: url('../assets/Clouds.png') no-repeat center;
     background-size: cover;
     z-index: 0; /* Behind content, but inside window */
-    image-rendering: pixelated; /* Ensures pixel-art look */
     animation: choppyFloat 1s steps(2) infinite alternate; /* Choppy movement */
 }
 
